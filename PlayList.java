@@ -49,7 +49,7 @@ class PlayList {
         
         String s="";
         for (int i = 0; i < this.size; i++) {
-            s+=this.tracks[i].toString();
+            s=s+"\r\n"+this.tracks[i].toString();
         }
         return s;
     }
@@ -96,7 +96,7 @@ class PlayList {
         if (i<0||i>this.size||this.size==this.maxSize) {
             return false;
         }
-        for (int j = this.size-1; j <i; j--) {
+        for (int j = this.size-1; j >i; j--) {
             this.tracks[j]=this.tracks[j+1];
 
         }
@@ -141,9 +141,10 @@ class PlayList {
     /** Removes the first track from this list. If the list is empty, does nothing. */
     public void removeFirst() {
         
-        for (int i = 0; i < this.size; i++) {
+        for (int i = 0; i < this.size-1; i++) {
             this.tracks[i]=this.tracks[i+1];
         }
+        this.tracks[this.size-1]=null;
         this.size--;
     }
     
@@ -155,7 +156,7 @@ class PlayList {
         if (this.size+other.size>this.maxSize) {
             
         }else{
-            for (int i = 0; i < this.size+other.size; i++) {
+            for (int i = 0; i < other.size; i++) {
                 this.tracks[i+this.size]=other.tracks[i];
             }
         }

@@ -44,12 +44,13 @@ class Track {
     private String formattedDuration(int totalSeconds) {
         int min=totalSeconds/60;
         int sec=totalSeconds%60;
-        String s="";
+        String m=Integer.toString(min);
+        String s=Integer.toString(sec);
         if (sec<10) {
-            s=min+" : "+"0"+sec; 
-            return s;
+            s="0"+sec;
+            
         }
-        s=min+" : "+sec;
-        return s;
+        String l= m+ " : "+s;
+        return l;
     }
 }
