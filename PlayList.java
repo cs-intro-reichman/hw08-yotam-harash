@@ -159,7 +159,9 @@ class PlayList {
             for (int i = 0; i < other.size; i++) {
                 this.tracks[i+this.size]=other.tracks[i];
             }
+            this.size+=other.size;
         }
+        
     }
 
     /** Returns the index in this list of the track that has the shortest duration,

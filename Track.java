@@ -17,7 +17,7 @@ class Track {
     public String toString() {
         //// Replace the following statement with code that returns
         //// the data of this track according to the method's documentation.
-        return artist + ", " + title + ", " + this.formattedDuration(duration);
+        return artist + ", " + title + ", " + duration;
     }
 
     /** Returns this track's title. */
