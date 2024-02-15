@@ -97,7 +97,7 @@ class PlayList {
             return false;
         }
         for (int j = this.size-1; j >i; j--) {
-            this.tracks[j]=this.tracks[j+1];
+            this.tracks[j]=this.tracks[j-1];
 
         }
         this.tracks[i]=track;
